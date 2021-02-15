@@ -1,0 +1,15 @@
+.nav {
+  background-color: grey;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 0px !important;
+}
+.nav-link {
+  list-style: none;
+}
