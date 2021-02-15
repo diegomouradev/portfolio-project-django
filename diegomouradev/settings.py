@@ -128,8 +128,3 @@ PosixPath('/Users/diegodev/Documents/dev_projects/portfolio/diegomouradev')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'diegomouradev/static'),
 ]
-
-…
-# Configure Django App for Heroku.
-import django_heroku
-django_heroku.settings(locals())
