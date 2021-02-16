@@ -28,7 +28,7 @@ SECRET_KEY = 'b%i%%u^!z2*bi1oalpwwhcu!-86a(fp70!4d=!gipse^5p)p_k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.diegomoura.dev', 'diegomoura.dev']
+ALLOWED_HOSTS = ['www.diegomoura.dev', 'diegomoura.dev', 'diegomouradev.herokuapp.com']
 
 
 # Application definition
