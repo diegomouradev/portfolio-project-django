@@ -1,5 +1,12 @@
+h1 {
+  color: #ecffb0;
+}
+
+.body-light {
+  color: #ecffb0;
+}
 .nav {
-  background-color: grey;
+  background-color: #ecffb0;
   display: flex;
   justify-content: space-around;
   padding: 20px 40px;
@@ -12,4 +19,25 @@
 }
 .nav-link {
   list-style: none;
+}
+
+.hero {
+  background-color: black;
+}
+
+.hero-home {
+  width: 100vw;
+}
+
+.nav a {
+  color: black;
+}
+
+.nav h1 {
+  color: black;
+}
+
+.section-bg {
+  background-color: black;
+  height: 100vh;
 }

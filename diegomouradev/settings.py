@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +21,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'b%i%%u^!z2*bi1oalpwwhcu!-86a(fp70!4d=!gipse^5p)p_k'
+
+with open('/Users/diegodev/Documents/dev_projects/Django/portfolio/diegomouradev/secret_key.txt') as f:
+    SECRET_KEY = f.read().strip()
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.diegomoura.dev', 'diegomoura.dev']
 
 
 # Application definition
@@ -82,6 +86,13 @@ DATABASES = {
     }
 }
 
+CSRF_COOKIE_SECURE = True
+
+SESSION_COOKIE_SECURE = True
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+SECURE_SSL_REDIRECT = True
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -128,3 +139,5 @@ PosixPath('/Users/diegodev/Documents/dev_projects/portfolio/diegomouradev')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'diegomouradev/static'),
 ]
+
+django_heroku.settings(locals())

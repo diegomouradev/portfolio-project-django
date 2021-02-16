@@ -5,28 +5,51 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>diegomoura.dev</title>
+        <title>{% block title %}diegomoura.dev{% endblock%}</title>
 
         <!-- Bootstrap 4.4.0 -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
         <link rel="stylesheet" href="{% static 'diegomouradev/css/styles.css' %}">
- 
     </head>
     <body>
         <header>
             <nav class="nav">
                 <div class="nav-branding">
-                    <a href="{% url 'projects_index' %}"><h1>Diego Moura</h1></a>
+                    <a href="{% url 'home' %}">
+                        <h1>Diego Moura</h1>
+                    </a>
                 </div>
                 <ul class="nav-links">
-                    <li class="nav-link"><a href="{% url 'projects_index' %}">Home</a></li>
+                    <li class="nav-link"><a href="{% url 'home' %}">Home</a></li>
+                    <li class="nav-link"><a href="{% url 'projects_index' %}">Projects</a></li>
                     <li class="nav-link"><a href="{% url 'blog_index' %}">Blog</a></li>
                 </ul>
             </nav>
         </header>
 
-        <main class="container">
-            {% block page_content %}{% endblock %}
+        <section class="hero container-fluid" style="padding: 0px;">
+            <div class="row">
+                {% block hero %}
+                {% endblock %}
+            </div> 
+        </section>
+
+        <main class="container-fluid section-bg">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="container">
+                        {% block bio %}{% endblock %}
+                    </div>
+                </div>
+            </div>    
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="container">
+                        {% block page_content %}{% endblock %}
+                    </div>
+                </div>
+            </div>    
+            
         </main>
 
         <footer>

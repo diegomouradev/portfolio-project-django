@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title%}Home - diegomoura.dev{% endblock %}
+
+{% block hero %}
+    <div class="col-md-12">
+        <!-- <video src="{% static 'diegomouradev/vid/home-hero-vid.mp4' %}" autoplay></video> -->
+        <img class="hero-home" src="{% static 'diegomouradev/img/hero-home.jpg' %}" alt="">
+    </div>
+{% endblock %}
+
+{% block bio %}
+    <div class="row">
+        <div class="col-md-4">
+            <img src="" alt="">
+        </div>
+        <div class="col-md-8">
+            <h1>Bio</h1>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                Fuga similique neque vitae praesentium animi iste earum quod dignissimos, 
+                amet nihil iusto suscipit explicabo eveniet maiores odio, vel eligendi veniam maxime.
+            </p>
+        </div>
+    </div>
+{% endblock %}
