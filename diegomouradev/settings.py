@@ -28,7 +28,7 @@ SECRET_KEY = 'b%i%%u^!z2*bi1oalpwwhcu!-86a(fp70!4d=!gipse^5p)p_k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.diegomoura.dev', 'diegomoura.dev', 'diegomouradev.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -60,7 +60,11 @@ ROOT_URLCONF = 'diegomouradev.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['diegomouradev/templates/diegomouradev/', 'projects/templates/', 'blog/templates'],
+        'DIRS': [
+            'diegomouradev/templates/diegomouradev/', 
+            'projects/templates/projects', 
+            'blog/templates/blog'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
