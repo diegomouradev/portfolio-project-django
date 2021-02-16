@@ -12,10 +12,13 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 import django_heroku
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -26,7 +29,7 @@ SECRET_KEY = 'b%i%%u^!z2*bi1oalpwwhcu!-86a(fp70!4d=!gipse^5p)p_k'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
