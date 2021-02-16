@@ -1,6 +1,1 @@
 venv
-*.pyc
-staticfiles
-.env
-secret_key
-getting-started/*
