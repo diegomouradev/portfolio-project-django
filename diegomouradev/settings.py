@@ -60,7 +60,7 @@ ROOT_URLCONF = 'diegomouradev.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['diegomouradev/templates/diegomouradev'],
+        'DIRS': ['diegomouradev/templates/diegomouradev/', 'projects/templates/', 'blog/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -139,7 +139,5 @@ PosixPath('/Users/diegodev/Documents/dev_projects/portfolio/diegomouradev')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'diegomouradev/static'),
 ]
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
