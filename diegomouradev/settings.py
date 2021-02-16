@@ -14,7 +14,7 @@ from pathlib import Path
 import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,7 +26,7 @@ SECRET_KEY = 'b%i%%u^!z2*bi1oalpwwhcu!-86a(fp70!4d=!gipse^5p)p_k'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -60,11 +60,7 @@ ROOT_URLCONF = 'diegomouradev.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            'diegomouradev/templates/diegomouradev/', 
-            'projects/templates/projects', 
-            'blog/templates/blog'
-        ],
+        'DIRS': ['diegomouradev/templates/diegomouradev'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -86,7 +82,7 @@ WSGI_APPLICATION = 'diegomouradev.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
 
