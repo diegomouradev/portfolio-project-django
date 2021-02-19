@@ -11,13 +11,15 @@ class Category(models.Model):
     def __str__(self):
         return '%s' % (self.name)
 
+
 def images_path():
     return os.path.join(settings.STATIC_URL, 'img')
+
 
 class Post(models.Model):
     title = models.CharField(max_length=80)
     sub_title = models.CharField(max_length=150)
-    image = models.FilePathField(path=images_path, default="img")
+    image = models.ImageField(upload_to='blog/images')
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)

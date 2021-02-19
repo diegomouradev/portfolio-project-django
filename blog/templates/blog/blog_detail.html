@@ -1,10 +1,9 @@
 {% extends "base.html" %}
-{% load static %}
 
 {% block page_content %}
 <div class="col-md-8 offset-md-2">
     <h1>{{ post.title }}</h1>
-    <img src="{% static post.image %}" alt="" width="100%">
+    <img src="{{ post.image.url }}" alt="" width="100%">
     <small>
         {{ post.created_on.date }} |&nbsp;
         Categories:&nbsp;

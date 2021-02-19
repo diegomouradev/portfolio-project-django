@@ -14,6 +14,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='post',
             name='image',
-            field=models.FilePathField(default='img', path=blog.models.images_path),
+            field=models.FilePathField(
+                default='img', path=blog.models.images_path),
         ),
     ]
