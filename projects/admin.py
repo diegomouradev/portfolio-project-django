@@ -1,6 +1,11 @@
 from django.contrib import admin
 
 # Register your models here.
-from . import models
+from projects.models import Projects
 
-admin.site.register(models.Projects)
+
+class ProjectsAdmin(admin.ModelAdmin):
+    pass
+
+
+admin.site.register(Projects, ProjectsAdmin)
