@@ -12,10 +12,14 @@
 {% block bio %}
     <div class="row">
         <div class="col-md-4">
-            <img src="" alt="">
+            <div class="align-center">
+                <img class="profile-pic shadow-sm" src="{% static 'diegomouradev/img/home-bio.jpg' %}" alt="Diego Moura">
+            </div>
+            
         </div>
         <div class="col-md-8">
-            <h1>Bio</h1>
+            
+            <spam class="heading-emoji"><h1>Bio</h1> &#128269;</spam>
             <p class="body-light">
                 As a Front-End Software Engineer with a background in UI design, digital marketing, 
                 email marketing, and project management, I’m enthusiastic about delivering high-quality 
@@ -23,8 +27,18 @@
                 current web technologies, heightened interpersonal skills, and scrupulous attention 
                 to detail allow me to complete projects at a high standard of excellence within declared 
                 deadlines. I am looking for a placement that will be supportive of my continued growth and experience.
-                <em>diegoo.demoura@gmail.com</em>
             </p>
+
+            <div class="container">
+                <div class="col-md-12">
+                    <h2>Social</h2>
+                    <ul>
+                        <li>LinkedIn</li>
+                        <li>Twitter</li>
+                        <li>Github</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}

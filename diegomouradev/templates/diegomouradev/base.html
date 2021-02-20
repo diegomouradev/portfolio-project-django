@@ -13,46 +13,68 @@
     </head>
     <body>
         <header>
-            <nav class="nav">
-                <div class="nav-branding">
+            <nav class="nav container">
+                <div>
                     <a href="{% url 'home' %}">
-                        <h1>Diego Moura</h1>
+                        <h1 class="nav-branding">diegomoura.dev</h1> 
+                        <a class="twitter-follow-button"
+                        href="https://twitter.com/_DiegoMoura">
+                      Follow @_DiegoMoura</a>
                     </a>
                 </div>
-                <ul class="nav-links">
-                    <li class="nav-link"><a href="{% url 'home' %}">Home</a></li>
-                    <li class="nav-link"><a href="{% url 'projects_index' %}">Projects</a></li>
-                    <li class="nav-link"><a href="{% url 'blog_index' %}">Blog</a></li>
+
+                <ul id="nav-links" class="nav-links">
+                    <li class="link nav-link__home">
+                        <a  class="nav-link__emoji" href="{% url 'home' %}">🏡</a>
+                        <div class="description description-home">Home</div>
+                    </li>
+                    <li class="link nav-link__projects">
+                        <a class="nav-link__emoji" href="{% url 'projects_index' %}">🦖</a>
+                        <div class="description description-projects">Pet projects</div>
+                    </li>
+                    <li class="link nav-link__work">
+                        <a  class="nav-link__emoji" href="{% url 'projects_index' %}">🤑</a>
+                        <div class="description description-work">Paid gigs</div>
+                    </li>
+                    <li class="link nav-link__blog">
+                        <a  class="nav-link__emoji" href="{% url 'blog_index' %}"> 🖋</a>
+                        <div class="description description-blog">Blog</div>
+                    </li>
+                    <li class="link nav-link__contact">
+                        <a  class="nav-link__emoji" href="{% url 'blog_index' %}">☕</a>
+                        <div class="description description-contact">Buy me a coffee?</div>
+                    </li>
                 </ul>
             </nav>
         </header>
 
-        <section class="hero container-fluid" style="padding: 0px;">
+        <!-- <section class="hero container-fluid" style="padding: 0px;">
             <div class="row">
                 {% block hero %}
                 {% endblock %}
-            </div> 
-        </section>
+            </div>
+        </section> -->
 
-        <main class="container-fluid section-bg">  
+        <main class="container section-bg">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="container">
-                        {% block bio %}{% endblock %}
-                    </div>
+                <div class="col-md-12 section-margin">
+                    {% block bio %}{% endblock %}
+                </div>
+
                 <div class="col-md-12">
                     <div class="container">
                         {% block page_content %}{% endblock %}
                     </div>
                 </div>
-            </div>    
-            
+            </div>
+
         </main>
 
         <footer>
 
         </footer>
 
+        <script src="{% static '/diegomouradev/js/app.js' %}"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
