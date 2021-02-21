@@ -1,9 +1,6 @@
 {% extends "base.html" %}
-{% load static %}
 
 {% block title%}Projects - diegomoura.dev{% endblock %}
-
-
 
 {% block page_content %}
 <h1>Projects</h1>
@@ -12,7 +9,7 @@
     <div class="col-md-10">
         <div class="card mb-2">
             <div class="col-md-3">
-                <img class="card-img-top" src="{% static project.image %}">
+                <img class="card-img-top" src="{{ project.image.url }}">
             </div>
             <div class="col-md-9">
                 <div class="card-body">

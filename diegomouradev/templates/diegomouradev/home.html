@@ -11,13 +11,13 @@
 
 {% block bio %}
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-5">
             <div class="align-center">
-                <img class="profile-pic shadow-sm" src="{% static 'diegomouradev/img/home-bio.jpg' %}" alt="Diego Moura">
+                <img class="profile-pic" src="{% static 'diegomouradev/img/home-bio.jpg' %}" alt="Diego Moura">
             </div>
             
         </div>
-        <div class="col-md-8">
+        <div class="col-md-7">
             
             <spam class="heading-emoji"><h1>Bio</h1> &#128269;</spam>
             <p class="body-light">
@@ -28,39 +28,52 @@
                 to detail allow me to complete projects at a high standard of excellence within declared 
                 deadlines. I am looking for a placement that will be supportive of my continued growth and experience.
             </p>
-
-            <div class="container">
-                <div class="col-md-12">
-                    <h2>Social</h2>
-                    <ul>
-                        <li>LinkedIn</li>
-                        <li>Twitter</li>
-                        <li>Github</li>
-                    </ul>
-                </div>
-            </div>
+        </div>
+    </div>
+    <div class="row justify-content-end">
+        <div class="col-md-7">
+            <ul class="social-links">
+                <li class="social-link">
+                    <a href="https://www.linkedin.com/in/diego-moura/" target="_blank" rel="noopener">
+                        <svg class="icon icon-linkedin2">
+                            <use xlink:href="#icon-linkedin2"></use></svg></a></li>
+                <li class="social-link">
+                    <a href="https://twitter.com/_DiegoMoura" target="_blank" rel="noopener">
+                        <svg class="icon icon-twitter">
+                            <use xlink:href="#icon-twitter"></use></svg></a></li>
+                <li class="social-link">
+                    <a href="https://github.com/diegomouradev" target="_blank" rel="noopener">
+                        <svg class="icon icon-github">
+                            <use xlink:href="#icon-github"></use></svg></a></li>
+                <li class="social-link">
+                    <a href="https://codepen.io/diegomoura" target="_blank" rel="noopener">
+                        <svg class="icon icon-codepen">
+                            <use xlink:href="#icon-codepen"></use></svg></a></li>
+            </ul>
         </div>
     </div>
 {% endblock %}
 
-{% block page_content %}
-<h1>Projects</h1>
-<div class="row">
-{% for project in projects %}
-    <div class="col-md-4">
-        <div class="card mb-2">
-            <img class="card-img-top" src="{% static project.image %}">
-            <div class="card-body">
-                <h5 class="card-title">{{ project.title }}</h5>
-                <p class="card-text">{{ project.description }}</p>
-                <a href="{% url 'project_detail' project.pk %}"
-                   class="btn btn-primary">
-                    Read More
-                </a>
-            </div>
-        </div>
-    </div>
-    {% endfor %}
+<div class="container-fluid">
+
 </div>
+
+{% block page_content %}
+{% for project in projects %}
+<div class="row">
+
+    <div class="col-md-5">
+        <img src="{{ project.image.url }}" alt="" width="100%">
+    </div>
+    <div class="col-md-7">
+        <h5 class="card-title">{{ project.title }}</h5>
+        <p class="card-text">{{ project.description }}</p>
+        <a href="{% url 'project_detail' project.pk %}">
+            Read more
+        </a>
+    </div>
+   
+</div>
+{% endfor %}
 {% endblock %}
 

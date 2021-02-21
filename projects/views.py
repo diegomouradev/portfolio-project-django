@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views import generic
 from projects.models import Projects
 # Create your views here.
 
