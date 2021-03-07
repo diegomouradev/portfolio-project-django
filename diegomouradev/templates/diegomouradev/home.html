@@ -9,68 +9,60 @@
     </div>
 {% endblock %}
 
-{% block bio %}
-    <div class="row">
-        <div class="col-md-5">
-            <div class="align-center">
-                <img class="profile-pic" src="{% static 'diegomouradev/img/home-bio.jpg' %}" alt="Diego Moura">
-            </div>
-            
-        </div>
-        <div class="col-md-7">
-            
-            <spam class="heading-emoji"><h1>Bio</h1> &#128269;</spam>
-            <p class="body-light">
-                As a Front-End Software Engineer with a background in UI design, digital marketing, 
-                email marketing, and project management, I’m enthusiastic about delivering high-quality 
-                products and resolving issues with both skill and poise. My hands-on experience with 
-                current web technologies, heightened interpersonal skills, and scrupulous attention 
-                to detail allow me to complete projects at a high standard of excellence within declared 
-                deadlines. I am looking for a placement that will be supportive of my continued growth and experience.
-            </p>
-            <ul class="social-links">
-                <li class="social-link">
-                    <a href="https://www.linkedin.com/in/diego-moura/" target="_blank" rel="noopener">
-                        <svg class="icon icon-linkedin2">
-                            <use xlink:href="#icon-linkedin2"></use></svg></a></li>
-                <li class="social-link">
-                    <a href="https://twitter.com/_DiegoMoura" target="_blank" rel="noopener">
-                        <svg class="icon icon-twitter">
-                            <use xlink:href="#icon-twitter"></use></svg></a></li>
-                <li class="social-link">
-                    <a href="https://github.com/diegomouradev" target="_blank" rel="noopener">
-                        <svg class="icon icon-github">
-                            <use xlink:href="#icon-github"></use></svg></a></li>
-                <li class="social-link">
-                    <a href="https://codepen.io/diegomoura" target="_blank" rel="noopener">
-                        <svg class="icon icon-codepen">
-                            <use xlink:href="#icon-codepen"></use></svg></a></li>
-            </ul>
-        </div>
-    </div>
-   
-{% endblock %}
-
-<div class="container-fluid">
-
-</div>
-
 {% block page_content %}
-{% for project in projects %}
-<div class="row">
-
-    <div class="col-md-5">
-        <img src="{{ project.image.url }}" alt="" width="100%">
+<div class="row section-margin">
+    <div class="col-md-4">
+        <div class="align-center">
+            <img class="profile-pic" src="{% static 'diegomouradev/img/home-bio.jpg' %}" alt="Diego Moura">
+        </div>
+        
     </div>
-    <div class="col-md-7">
-        <h5 class="card-title">{{ project.title }}</h5>
-        <p class="card-text">{{ project.description }}</p>
-        <a href="{% url 'project_detail' project.pk %}">
-            Read more
-        </a>
+    <div class="col-md-8">
+        
+        <spam class="heading-emoji"><h1>Bio</h1> &#128269;</spam>
+        <p class="body-light">
+            As a Front-End Software Engineer with a background in UI design, digital marketing, 
+            email marketing, and project management, I’m enthusiastic about delivering high-quality 
+            products and resolving issues with both skill and poise. My hands-on experience with 
+            current web technologies, heightened interpersonal skills, and scrupulous attention 
+            to detail allow me to complete projects at a high standard of excellence within declared 
+            deadlines. I am looking for a placement that will be supportive of my continued growth and experience.
+        </p>
+        <ul class="social-links">
+            <li class="social-link">
+                <a href="https://www.linkedin.com/in/diego-moura/" target="_blank" rel="noopener">
+                    <svg class="icon icon-linkedin2">
+                        <use xlink:href="#icon-linkedin2"></use></svg></a></li>
+            <li class="social-link">
+                <a href="https://twitter.com/_DiegoMoura" target="_blank" rel="noopener">
+                    <svg class="icon icon-twitter">
+                        <use xlink:href="#icon-twitter"></use></svg></a></li>
+            <li class="social-link">
+                <a href="https://github.com/diegomouradev" target="_blank" rel="noopener">
+                    <svg class="icon icon-github">
+                        <use xlink:href="#icon-github"></use></svg></a></li>
+            <li class="social-link">
+                <a href="https://codepen.io/diegomoura" target="_blank" rel="noopener">
+                    <svg class="icon icon-codepen">
+                        <use xlink:href="#icon-codepen"></use></svg></a></li>
+        </ul>
     </div>
-   
 </div>
-{% endfor %}
+<div class="section-margin">
+    <div class="row">
+        {% for project in projects %}
+        <div class="col-md-4">
+            <img src="{{ project.image.url }}" alt="" width="80%">
+            <h5 class="card-title">{{ project.title }}</h5>
+            <p class="card-text">{{ project.description | slice:":200" }}...</p>
+            <a href="{% url 'project_detail' project.pk %}">
+                Read more
+            </a>
+        </div>
+    
+        {% endfor %}
+    </div>
+</div>
+
 {% endblock %}
 

@@ -1,0 +1,104 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+h1,
+h2.h3,
+h4.h5,
+h6 {
+  display: inline-block;
+}
+
+.nav {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 10px 30px;
+}
+
+.nav-links,
+.social-links {
+  display: flex !important;
+  list-style: none !important;
+}
+
+.nav-link__emoji {
+  position: relative;
+  color: unset;
+}
+.nav-link__emoji:hover {
+  position: relative;
+  color: unset;
+  text-decoration: none;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+}
+
+.link:not(last-child),
+.social-link {
+  margin-right: 40px;
+}
+
+.description {
+  visibility: hidden;
+  font-size: 30px;
+  position: absolute;
+  transform: translateY(200%);
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-link__home:hover > div.description-home,
+.nav-link__projects:hover > div.description-projects,
+.nav-link__work:hover > div.description-work,
+.nav-link__blog:hover > div.description-blog,
+.nav-link__contact:hover > div.description-contact {
+  visibility: visible;
+  font-size: 18px;
+  position: absolute;
+  transform: translateY(150%);
+}
+
+.section-margin {
+  margin-top: 70px;
+  margin-bottom: 100px;
+}
+.align-center {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-pic {
+  width: 80%;
+  border-radius: 50%;
+}
+.heading-emoji {
+  display: inline;
+  font-size: 50px;
+}
+
+.icon {
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  stroke-width: 0;
+  stroke: black;
+  fill: black;
+}
+
+.footer {
+  background-color: #333;
+  padding: 20px 50px;
+}
