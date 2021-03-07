@@ -1,17 +1,18 @@
 {% extends "base.html" %}
 
 
-{% block title%}Project - {{ project.title }} @ diegomoura.dev{% endblock %}
+{% block title%}Project - {{ project.title }} diegomoura.dev{% endblock %}
 
 {% block hero %}&nbsp;{% endblock %}
 
 {% block page_content %}
-<h1>{{ project.title }}</h1>
-<div class="row">
+
+<div class="row section-margin">
     <div class="col-md-8">
         <img src="{{ project.image.url }}" alt="" width="100%">
     </div>
     <div class="col-md-4">
+        <h1>{{ project.title }}</h1>
         <h5>About the project:</h5>
         <p>{{ project.description }}</p>
         <br>
